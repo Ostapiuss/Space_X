@@ -1,10 +1,18 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
-    "outDir": "dist",
+    "module": "commonjs",
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "target": "es5",
     "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "src",
     "esModuleInterop": true,
+    "sourceMap": true
   },
+  "types": [],
   "include": ["src"],
   "exclude": ["node_modules"]
 }
