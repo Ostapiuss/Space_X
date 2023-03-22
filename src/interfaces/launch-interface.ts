@@ -10,6 +10,29 @@ export interface CoreInterface {
   "landpad": null | string | any
 }
 
+interface linksInterface {
+  "patch": {
+    "small": string,
+    "large": string
+  }
+  "reddit": {
+    "campaign": string,
+    "launch": string,
+    "media": string,
+    "recovery": null | boolean | any
+  }
+  "flickr": {
+    "small": Array<string | any>,
+    "original": Array<string | any>
+  }
+
+  "presskit": string,
+  "webcast": string,
+  "youtube_id": string,
+  "article": string,
+  "wikipedia": string
+}
+
 export interface LaunchDocsDataInterface {
   "fairings": {
     "reused": boolean,
@@ -17,27 +40,7 @@ export interface LaunchDocsDataInterface {
     "recovered": boolean,
     "ships": any[]
   },
-  "links": {
-    "patch": {
-      "small": string,
-      "large": string
-    },
-    "reddit": {
-      "campaign": null | any,
-      "launch": null | any,
-      "media": null | any,
-      "recovery": null | any
-    },
-    "flickr": {
-      "small": any[],
-      "original": any[]
-    },
-    "presskit": null,
-    "webcast": string,
-    "youtube_id": string,
-    "article": string,
-    "wikipedia": string
-  },
+  "links": linksInterface,
   "static_fire_date_utc": string,
   "static_fire_date_unix": number,
   "net": boolean,
@@ -66,5 +69,33 @@ export interface LaunchDocsDataInterface {
   "auto_update": boolean,
   "tbd": boolean,
   "launch_library_id": null | string | any,
+  "id": string
+}
+
+export interface LaunchInterface {
+  "fairings": null | string | any,
+  "links": linksInterface,
+  "static_fire_date_utc": string,
+  "static_fire_date_unix": number,
+  "tdb": boolean,
+  "net": boolean,
+  "window": number,
+  "rocket": string,
+  "success": boolean,
+  "failures": Array<any>,
+  "details": string,
+  "ships": Array<any>,
+  "capsules": Array<string | any>,
+  "payloads": Array<string | any>,
+  "launchpad": string,
+  "auto_update": boolean,
+  "flight_number": number,
+  "name": string,
+  "date_utc": string,
+  "date_unix": number,
+  "date_local": string,
+  "date_precision": string,
+  "upcoming": boolean,
+  "cores": Array<CoreInterface | null | any>,
   "id": string
 }

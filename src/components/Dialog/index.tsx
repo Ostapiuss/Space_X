@@ -1,18 +1,23 @@
+import React from 'react';
+
+import cn from 'classnames';
+
 import './style.scss';
 
+interface DialogInterface {
+  children: JSX.Element,
+  open: boolean,
+  className?: string,
+}
 
-const Dialog = ({ children, open, onClose }) => {
 
+const Dialog: React.FC<DialogInterface> = ({ children, open, className }) => {
   if (open) {
     return (
       <div className="overlay">
-        <div className="modal">
+        <div className={cn('modal', className)}>
           <div className="modalContent">
-            <div className="wrapperModalBtn">
-              <button className="buttonIcon" onClick={onClose}>
-              </button>
-            </div>
-            {children}
+            { children }
           </div>
         </div>
       </div>

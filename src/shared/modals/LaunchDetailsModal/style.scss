@@ -1,0 +1,41 @@
+.launch-modal {
+  max-height: 600px;
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+
+  background-color: #11141f;
+  padding: 40px 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+
+  &__image {
+    width: 350px;
+    height: 350px;
+  }
+
+  &__actions {
+    margin-top: 50px;
+  }
+
+  &__title {
+    font-size: 50px;
+    font-weight: 700;
+  }
+
+  &__date {
+    font-size: 20px;
+  }
+
+  &__close-icon {
+    cursor: pointer;
+  }
+
+  .status {
+    margin-top: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+}

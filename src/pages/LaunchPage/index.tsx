@@ -19,6 +19,7 @@ const LaunchPage = () => {
       setPage(page + 1);
       setFetching(false);
     });
+    // eslint-disable-next-line
   }, [fetching]);
 
   useEffect(() => {
