@@ -2,13 +2,15 @@ import React from "react";
 
 import LaunchCard from "../LaunchCard";
 
+import {LaunchDocsDataInterface} from "../../interfaces/launch-interface";
+
 import './style.scss';
 
-interface Launches {
-  launchesData: any[]
+interface LaunchesInterface {
+  launchesData: LaunchDocsDataInterface[]
 }
 
-const Launches: React.FC<Launches> = ({ launchesData }) => {
+const Launches: React.FC<LaunchesInterface> = ({ launchesData }) => {
   return (
     <div className="launches">
       <h2 className="launches-title">Launches</h2>

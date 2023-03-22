@@ -9,6 +9,7 @@ const MainRoutes = () => {
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/" element={<LaunchPage />} />
+        <Route path="/:id" element={<LaunchPage />} />
       </Routes>
     </Suspense>
   )
