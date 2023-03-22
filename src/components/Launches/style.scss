@@ -1,0 +1,19 @@
+.launches {
+  padding: 20px 50px;
+
+  .launches-cards {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    gap: 10px;
+  }
+
+  .launches-title {
+    color: white;
+    margin-bottom: 30px;
+
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
