@@ -22,9 +22,7 @@ export const getLaunches = async (page: number):Promise<Array<LaunchDocsDataInte
 export const getFilterLaunches = async (filters?: Array<FilterSchema>):Promise<Array<LaunchDocsDataInterface>> => {
 
   const getFilterQuery = () => {
-    const query: {name?: string | boolean, success?: boolean | string } = {
-
-    }
+    const query: {name?: string | boolean, success?: boolean | string } = {}
 
     filters.forEach(filter => {
       switch (filter.filterBy) {
@@ -65,7 +63,7 @@ export const getFilterLaunches = async (filters?: Array<FilterSchema>):Promise<A
     });
 
     if (allFilterQueries['name']) {
-      return docs.filter((doc) => doc.rocket.name.includes(allFilterQueries['name']));
+      return docs.filter((doc: LaunchInterface) => doc.rocket.name.includes(allFilterQueries['name']));
     }
 
     return docs;
