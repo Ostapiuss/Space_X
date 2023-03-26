@@ -45,7 +45,9 @@ export interface LaunchDocsDataInterface {
   "static_fire_date_unix": number,
   "net": boolean,
   "window": number,
-  "rocket": string,
+  "rocket": {
+    "name": string,
+  },
   "success": boolean,
   "failures": Array<{
     "time": number,
