@@ -82,7 +82,9 @@ export interface LaunchInterface {
   "tdb": boolean,
   "net": boolean,
   "window": number,
-  "rocket": string,
+  "rocket": {
+    "name": string | any,
+  },
   "success": boolean,
   "failures": Array<any>,
   "details": string,
