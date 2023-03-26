@@ -23,4 +23,6 @@ button {
 .app-root {
   color: white;
   background-color: #000416;
+
+  min-height: 100vh;
 }
