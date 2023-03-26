@@ -41,6 +41,7 @@ const Launches: React.FC<any> = () => {
         setSpaceXData([...spaceXData, ...res]);
       })
     }
+    // eslint-disable-next-line
   }, [filterData])
 
   useEffect(() => {
@@ -49,6 +50,7 @@ const Launches: React.FC<any> = () => {
     return () => {
       window.removeEventListener('scroll', scrollHandler);
     }
+    // eslint-disable-next-line
   }, []);
 
   const scrollHandler = useCallback((e) => {
