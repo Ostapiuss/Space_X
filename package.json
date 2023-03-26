@@ -1,8 +1,8 @@
 {
   "name": "Space-X-Project",
+  "homepage": "https://Ostapiuss.github.io/Space_X/",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/",
   "dependencies": {
     "@stitches/react": "^1.2.8",
     "@testing-library/jest-dom": "^5.16.3",
