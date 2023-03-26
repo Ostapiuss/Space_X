@@ -22,7 +22,8 @@ export const getLaunches = async (page: number):Promise<Array<LaunchDocsDataInte
 export const getFilterLaunches = async (filters?: Array<FilterSchema>):Promise<Array<LaunchDocsDataInterface>> => {
 
   const getFilterQuery = () => {
-    const query = {
+    const query: {name?: string, success?: boolean } = {
+
     }
 
     filters.forEach(filter => {
