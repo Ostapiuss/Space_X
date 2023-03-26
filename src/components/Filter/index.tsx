@@ -44,6 +44,7 @@ const Filter: React.FC<FilterInterface> = ({
 
   useEffect(() => {
     initializeForm();
+    // eslint-disable-next-line
   }, []);
 
   const initializeForm = (): void => {

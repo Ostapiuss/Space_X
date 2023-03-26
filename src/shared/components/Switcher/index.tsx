@@ -9,7 +9,6 @@ interface SwitcherInterface {
 }
 
 const Switcher: React.FC<SwitcherInterface> = ({ name, value, onChange }) => {
-
   return (
     <label className="switcher">
       <input
