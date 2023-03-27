@@ -61,7 +61,7 @@ const Filter: React.FC<FilterInterface> = ({
   const createFilters = (formArray: Entries<Object>): Array<FilterSchema> => {
     const filterArray: Array<any> = [];
 
-    formArray.map((el) => {
+    formArray.forEach((el) => {
       filterArray.push({ filterBy: el[0], filterValue: el[1] })
     });
 
