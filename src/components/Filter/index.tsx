@@ -1,18 +1,19 @@
-import React, {ChangeEvent, useEffect, useState} from "react";
+import React, {ChangeEvent, FormEvent, useEffect, useState} from "react";
 
 import cn from "classnames";
 
 import Button from "../../shared/components/Button";
 import Switcher from "../../shared/components/Switcher";
 
-import { LaunchFilterFields } from "../../interfaces/filter-interface";
+import {FilterSchema, LaunchFilterFields} from "../../interfaces/filter-interface";
 
 import { FIELD_TYPES } from "../../constants/fields";
 
 import { styled } from "@stitches/react";
 
 import './style.scss';
-import {LaunchInterface} from "../../interfaces/launch-interface";
+import { LaunchDocsDataInterface } from "../../interfaces/launch-interface";
+import { Entries } from "../../types/generall";
 
 const TextField = styled("input", {
   padding: '10px 20px',
@@ -26,10 +27,10 @@ const TextField = styled("input", {
 interface FilterInterface {
   fields: Array<LaunchFilterFields | any>,
   className?: string,
-  setSpaceXData: () => Array<LaunchInterface>,
-  setFilterData: () => void,
+  setSpaceXData: (newState: Array<LaunchDocsDataInterface>) => void,
+  setFilterData: (newFilterData: Array<FilterSchema>) => void,
   resetFilters: () => void,
-  filterData: () => void,
+  filterData: Array<FilterSchema>,
 }
 
 const Filter: React.FC<FilterInterface> = ({
@@ -57,20 +58,21 @@ const Filter: React.FC<FilterInterface> = ({
     }
   }
 
-  const createFilters = (formArray) => {
-    const filterArray = [];
+  const createFilters = (formArray: Entries<Object>): Array<FilterSchema> => {
+    const filterArray: Array<any> = [];
 
-    formArray.forEach((el) => {
+    formArray.map((el) => {
       filterArray.push({ filterBy: el[0], filterValue: el[1] })
     });
 
     return filterArray;
   }
 
-  const onSubmit = (submitEvent: SubmitEvent) => {
+  const onSubmit = (submitEvent: FormEvent<HTMLFormElement>) => {
     submitEvent.preventDefault();
     setSpaceXData([]);
 
+    // @ts-ignore
     setFilterData(createFilters(Object.entries(formData)));
   }
 
@@ -118,7 +120,20 @@ const Filter: React.FC<FilterInterface> = ({
                   {
                     field.fieldType === FIELD_TYPES.switchField && (
                       <div className={`switch ${field.fieldName}`}>
-                        <h3>Is Success Launch</h3>
+                      <h3>Is Success Launch</h3>
+                        {
+                          filterData && (
+                            <span>
+                              {
+                                !formData[field.fieldName] ? (
+                                  <span className="not-success">False</span>
+                                ) : (
+                                  <span className="is-success">True</span>
+                                )
+                              }
+                            </span>
+                          )
+                        }
                         <Switcher
                           name={field.fieldName}
                           value={formData[field.fieldName] ?? false}

@@ -5,7 +5,8 @@ import Button from 'shared/components/Button';
 import { getLaunch } from 'api/space-api';
 
 import { LaunchInterface } from 'interfaces/launch-interface';
-import { ReactComponent as CloseIcon } from 'assets/images/close-icon.svg'
+// @ts-ignore
+import { ReactComponent as CloseIcon } from 'assets/images/close-icon.svg';
 
 import './style.scss';
 

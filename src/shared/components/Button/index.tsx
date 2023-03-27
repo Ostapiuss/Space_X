@@ -6,6 +6,7 @@ interface ButtonInterface {
   className?: string,
   onClick?: () => void,
   text: string,
+  type?: "button" | "reset" | "submit",
 }
 const StyledButtonModal = styled("button", {
   backgroundColor: 'transparent',
@@ -26,9 +27,10 @@ const StyledButtonModal = styled("button", {
   }
 });
 
-const Button: React.FC<ButtonInterface> = ({ className, text, onClick }) => {
+const Button: React.FC<ButtonInterface> = ({ className, text, onClick, type }) => {
+  // @ts-ignore
   return (
-    <StyledButtonModal className={className} onClick={onClick}>
+    <StyledButtonModal className={className} onClick={onClick} type={type}>
       { text }
     </StyledButtonModal>
   )

@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import LaunchCard from "../LaunchCard";
 import Filter from "../Filter";
@@ -19,7 +19,7 @@ const FILTER_FIELDS: Array<LaunchFilterFields> = [
 
 const Launches: React.FC<any> = () => {
   const [spaceXData, setSpaceXData] = useState<Array<LaunchDocsDataInterface>>([]);
-  const [filterData, setFilterData] = useState<FilterSchema>(null);
+  const [filterData, setFilterData] = useState<Array<FilterSchema> | null>(null);
   const [page, setPage] = useState<number>(1);
   const [fetching, setFetching] = useState<boolean>(false);
 
@@ -44,16 +44,7 @@ const Launches: React.FC<any> = () => {
     // eslint-disable-next-line
   }, [filterData])
 
-  useEffect(() => {
-    window.addEventListener('scroll', scrollHandler);
-
-    return () => {
-      window.removeEventListener('scroll', scrollHandler);
-    }
-    // eslint-disable-next-line
-  }, []);
-
-  const scrollHandler = useCallback((e) => {
+  const scrollHandler = useCallback((e: any) => {
     const scrollHeight = e.target.documentElement.scrollHeight;
     const scrollTop = e.target.documentElement.scrollTop;
     const innerHeight = window.innerHeight;
@@ -61,6 +52,15 @@ const Launches: React.FC<any> = () => {
     if (scrollHeight - (scrollTop + innerHeight) < 200) {
       setFetching(true);
     }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollHandler);
+
+    return () => {
+      window.removeEventListener('scroll', scrollHandler);
+    }
+    // eslint-disable-next-line
   }, []);
 
   const resetFilters = () => {

@@ -8,6 +8,7 @@ interface DialogInterface {
   children: JSX.Element,
   open: boolean,
   className?: string,
+  onClose: () => void,
 }
 
 

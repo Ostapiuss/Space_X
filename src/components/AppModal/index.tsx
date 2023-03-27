@@ -36,7 +36,7 @@ const AppModal = () => {
     }
   }
 
-  const onUpdateModal = (data):void => {
+  const onUpdateModal = (data: modalStateInterface):void => {
     if (!data || !data.component) {
       onToggle(false);
       return;

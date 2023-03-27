@@ -11,5 +11,13 @@
   .filter-fields {
     display: flex;
     flex-direction: column;
+
+    .not-success {
+      color: red;
+    }
+
+    .is-success {
+      color: green;
+    }
   }
 }
