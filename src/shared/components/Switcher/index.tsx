@@ -1,11 +1,11 @@
-import React from "react";
+import React, {ChangeEvent} from "react";
 
 import './style.scss';
 
 interface SwitcherInterface {
   name: string,
-  type: string,
-  onChange: (changeEvent) => void
+  value: boolean,
+  onChange: (changeEvent: ChangeEvent<HTMLInputElement>) => void
 }
 
 const Switcher: React.FC<SwitcherInterface> = ({ name, value, onChange }) => {
@@ -14,7 +14,6 @@ const Switcher: React.FC<SwitcherInterface> = ({ name, value, onChange }) => {
       <input
         name={name}
         checked={value}
-        value={value}
         type="checkbox"
         onChange={onChange}
         className="switcher-input"

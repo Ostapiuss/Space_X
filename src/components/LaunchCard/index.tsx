@@ -23,7 +23,7 @@ const LaunchCard: React.FC<LaunchCardInterface> = ({ launchCardData }) => {
     // eslint-disable-next-line
   }, [params.id])
 
-  const onOpenModal = (launchId) => {
+  const onOpenModal = (launchId: string) => {
     AppModal.open({
       component: <LaunchDetailsModal launchId={launchId} onClose={onCloseModal} />,
       rootClassname: 'launch-modal-root',

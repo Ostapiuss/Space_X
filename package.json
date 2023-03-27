@@ -15,8 +15,10 @@
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
     "sass": "^1.59.3",
-    "typescript": "^5.0.1",
     "web-vitals": "^2.1.3"
+  },
+  "devDependencies": {
+    "typescript": "^4.8.0"
   },
   "scripts": {
     "start": "react-scripts start",

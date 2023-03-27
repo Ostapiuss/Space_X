@@ -5,7 +5,7 @@ class AppModalPublishSubscriber {
     this.modals = new Map();
   }
 
-  publish = (key, data) => {
+  publish = (key: string, data:any) => {
     const subscriber = this.modals.get(key);
 
     if (!subscriber) {
@@ -15,7 +15,7 @@ class AppModalPublishSubscriber {
     subscriber(data);
   }
 
-  subscribe = (key, callback) => {
+  subscribe = (key:string, callback: any) => {
     const modal = this.modals.get(key);
 
     if (modal) {
@@ -24,7 +24,7 @@ class AppModalPublishSubscriber {
     this.modals.set(key, callback);
   }
 
-  unsubscribe = (key) => {
+  unsubscribe = (key:string) => {
     this.modals.delete(key);
   }
 }
@@ -32,7 +32,7 @@ class AppModalPublishSubscriber {
 export const AppModalService = new AppModalPublishSubscriber();
 
 class AppModal {
-  open = (data) => {
+  open = (data: any) => {
     AppModalService.publish('app-modal', data);
   }
 
