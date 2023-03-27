@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/Space_X/static/css/main.265d7d76.css",
-    "main.js": "/Space_X/static/js/main.6ff5276a.js",
+    "main.js": "/Space_X/static/js/main.f63c3e9a.js",
     "static/css/202.665c252f.chunk.css": "/Space_X/static/css/202.665c252f.chunk.css",
     "static/js/202.e3cf8d89.chunk.js": "/Space_X/static/js/202.e3cf8d89.chunk.js",
     "static/js/87.319398b6.chunk.js": "/Space_X/static/js/87.319398b6.chunk.js",
     "static/media/close-icon.svg": "/Space_X/static/media/close-icon.035deb6d2b42e2f7ecaad6b27c63b68a.svg",
     "index.html": "/Space_X/index.html",
     "main.265d7d76.css.map": "/Space_X/static/css/main.265d7d76.css.map",
-    "main.6ff5276a.js.map": "/Space_X/static/js/main.6ff5276a.js.map",
+    "main.f63c3e9a.js.map": "/Space_X/static/js/main.f63c3e9a.js.map",
     "202.665c252f.chunk.css.map": "/Space_X/static/css/202.665c252f.chunk.css.map",
     "202.e3cf8d89.chunk.js.map": "/Space_X/static/js/202.e3cf8d89.chunk.js.map",
     "87.319398b6.chunk.js.map": "/Space_X/static/js/87.319398b6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.265d7d76.css",
-    "static/js/main.6ff5276a.js"
+    "static/js/main.f63c3e9a.js"
   ]
 }
