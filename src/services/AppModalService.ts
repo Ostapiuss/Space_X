@@ -41,4 +41,6 @@ class AppModal {
   }
 }
 
-export default new AppModal();
+const newAppModal: { open: (data: any) => void, close: () => void } = new AppModal();
+
+export default newAppModal;
